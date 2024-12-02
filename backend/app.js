@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 main()
   .then(() => {
@@ -45,7 +45,7 @@ app.use("/users", require("./routes/userRoutes.js"));
 app.use("/blogs/:id/comments", require("./routes/reviewRoutes.js"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 
 app.get("/", (req, res) => {

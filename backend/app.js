@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const Blog = require("./models/blogsSchema.js");
 // const  BlogRouter  = require("./routes/blogsRoutes.js");
 const cors = require("cors");
+const path = require("path");
 // const dotenv = require("dotenv").config();
 
 const app = express();

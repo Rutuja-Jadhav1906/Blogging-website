@@ -1,0 +1,109 @@
+/* Main container background with navy blue palette */
+.edit-blog-page {
+  background: linear-gradient(120deg, #000003, #010528); /* Navy blue palette */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form container with white background */
+.edit-blog-container {
+  background-color: white; /* White background for the form */
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 850px;
+  transition: transform 0.3s ease;
+  /* margin-top: 20px; */
+  margin-bottom: 0; /* Ensure no margin at the bottom */
+  padding-bottom: 20px;
+}
+
+/* .edit-blog-container:hover {
+    transform: translateY(-5px); /* Slight hover effect 
+  } */
+
+/* Title styling */
+.edit-blog-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #011e3c; /* Navy blue color for the title */
+}
+
+/* Form labels styling */
+.edit-blog-form .form-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #011e3c; /* Navy blue color */
+  margin-bottom: 10px;
+}
+
+/* Styling for form control (input, textarea) */
+.edit-blog-form .form-control {
+  background: #f4f7fb; /* Light gray background for inputs */
+  color: #333;
+  border: 1px solid #011e3c; /* Navy border */
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.edit-blog-form .form-control:focus {
+  border-color: #011e3c; /* Slight cyan color on focus */
+  box-shadow: 0 0 5px #011e3c;
+}
+
+/* Submit button styling */
+.submit-btn {
+  background-color: #011e3c;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.submit-btn:hover {
+  background-color: #011e3c; /* Light cyan on hover */
+  color: #ffffff;
+  transform: translateY(-2px); /* Slight hover animation */
+}
+
+.submit-btn:active {
+  background-color: #011e3c; /* Darker cyan when clicked */
+  transform: translateY(2px);
+}
+
+/* Styling for the textarea */
+textarea {
+  resize: none;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .edit-blog-container {
+    padding: 30px 20px;
+    margin: 0px 30px;
+  }
+
+  .edit-blog-title {
+    font-size: 28px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

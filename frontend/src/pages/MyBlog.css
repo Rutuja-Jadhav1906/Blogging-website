@@ -1,0 +1,124 @@
+/* Container Styles */
+
+.blog-container {
+  background: linear-gradient(160deg, #001020, #011e3c);
+  /* height: 100vh; */
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+}
+
+/* No Blogs Message */
+.no-blogs-text {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+}
+
+/* Blog Card */
+.blog-card {
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #011e3c;
+}
+
+.blog-category,
+.blog-content,
+.blog-author {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.blog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 10px; */
+}
+
+.blog-links {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.edit-link {
+  color: #011e3c;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.edit-link:hover {
+  text-decoration: underline;
+}
+
+.delete-link {
+  color: #e81e1e;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.delete-link:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  margin-left: 20px;
+}
+
+.likes {
+  font-size: 20px;
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.comment-item {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.no-comments-text {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Toggle Comments Button */
+.comments-toggle-btn {
+  margin-left: 20px;
+  /* width: 100%; */
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-col {
+    margin-bottom: 20px;
+  }
+
+  .blog-card {
+    box-shadow: none;
+    border: none;
+  }
+}

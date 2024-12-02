@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static(path.join(__dirname, "frontend/build")));
 
 main()
   .then(() => {
@@ -41,6 +42,10 @@ async function main() {
 app.use("/blogs", require("./routes/blogsRoutes.js"));
 app.use("/users", require("./routes/userRoutes.js"));
 app.use("/blogs/:id/comments", require("./routes/reviewRoutes.js"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
+});
 
 app.get("/", (req, res) => {
   res.send("Success");

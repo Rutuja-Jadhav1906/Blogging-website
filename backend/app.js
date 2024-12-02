@@ -1,11 +1,17 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const mongoose = require("mongoose");
 const Blog = require("./models/blogsSchema.js");
 // const  BlogRouter  = require("./routes/blogsRoutes.js");
 const cors = require("cors");
-const dotenv = require("dotenv").config();
+// const dotenv = require("dotenv").config();
 
 const app = express();
+
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,6 +46,6 @@ app.get("/", (req, res) => {
   res.send("Success");
 });
 
-app.listen(3000, () => {
-  console.log("Listening to port 3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

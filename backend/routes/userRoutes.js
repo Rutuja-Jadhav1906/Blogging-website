@@ -1,11 +1,8 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const { body, validationResult } = require("express-validator");
+const { body } = require("express-validator");
 const { registerUser, loginUser } = require("../controllers/userController.js");
 
 const router = express.Router();
-const JWT_SECRET = "your_secret_key"; // Replace with a secure secret
 
 // Register a new user
 router.post(

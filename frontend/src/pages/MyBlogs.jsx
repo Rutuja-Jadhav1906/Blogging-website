@@ -15,6 +15,7 @@ import "./MyBlog.css";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const MyBlogs = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const MyBlogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/blogs/author/${id}`);
+        const res = await fetch(`${API_BASE_URL}/blogs/author/${id}`);
         if (!res.ok) {
           enqueueSnackbar("You have not posted any blogs yet", {
             variant: "error",

@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { useSnackbar } from "notistack";
 import "./AddBlog.css";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const AddBlog = () => {
   const authToken = localStorage.getItem("authToken");
@@ -32,16 +33,12 @@ const AddBlog = () => {
   let handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:3000/blogs/add",
-        formData,
-        {
-          headers: {
-            authorization: `Bearer ${authToken}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const res = await axios.post(`${API_BASE_URL}/blogs/add`, formData, {
+        headers: {
+          authorization: `Bearer ${authToken}`,
+          "Content-Type": "application/json",
+        },
+      });
       enqueueSnackbar("Blog posted successfully", { variant: "success" });
       navigate("/blogs");
     } catch (err) {

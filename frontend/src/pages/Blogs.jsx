@@ -14,6 +14,7 @@ import { FaRegComment } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
 import { useSnackbar } from "notistack";
 import "./Blogs.css";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Blogs = () => {
   const authToken = localStorage.getItem("authToken");
@@ -38,7 +39,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/blogs");
+        const res = await fetch(`${API_BASE_URL}/blogs`);
         const data = await res.json();
         setBlogs(data);
         const initialToggleStates = data.reduce(

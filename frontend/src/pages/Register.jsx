@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import "./Register.css";
 import { useAuth } from "../AuthProvider";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +31,10 @@ const Register = () => {
     event.preventDefault();
     console.log(formData);
     try {
-      const res = await axios.post(`${API_BASE_URL}/users/register`, formData);
+      const res = await axios.post(
+        "http://localhost:3000/users/register",
+        formData
+      );
       // console.log(res.data.token);
       // localStorage.setItem("authToken", res.data.token);
       // localStorage.setItem("username", res.data.user.name);

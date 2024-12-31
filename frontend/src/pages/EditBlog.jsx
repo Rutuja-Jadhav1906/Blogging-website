@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import "./EditBlog.css";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const EditBlog = () => {
   const { id } = useParams();
@@ -23,7 +22,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/blogs/${id}`);
+        const res = await fetch(`http://localhost:3000/blogs/${id}`);
         const data = await res.json();
         setBlog(data);
         // console.log(blog);

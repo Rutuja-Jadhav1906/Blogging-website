@@ -22,7 +22,7 @@ app.use(
     credentials: true,
   })
 );
-// app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 main()
   .then(() => {
@@ -49,9 +49,9 @@ app.use("/blogs", require("./routes/blogsRoutes.js"));
 app.use("/users", require("./routes/userRoutes.js"));
 app.use("/blogs/:id/comments", require("./routes/reviewRoutes.js"));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+});
 
 app.get("/", (req, res) => {
   res.send("Success");

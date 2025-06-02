@@ -31,7 +31,7 @@ const Navbar1 = ({ setSearchResults }) => {
     // if (!searchTerm) return; // Ignore empty searches
     try {
       const res = await axios.post(
-        "http://localhost:3000/blogs/search",
+        "http://localhost:3000/api/blogs/search",
         formData
       );
       setSearchResults(res.data); // Pass data to the App state

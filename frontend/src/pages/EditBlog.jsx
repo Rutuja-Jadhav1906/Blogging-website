@@ -54,7 +54,7 @@ const EditBlog = () => {
         }
       );
       enqueueSnackbar("Blog updated successfully", { variant: "success" });
-      navigate("/");
+      navigate("/blogs");
     } catch (err) {
       enqueueSnackbar("Error in updating blog", { variant: "error" });
       console.log(err);

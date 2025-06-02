@@ -43,7 +43,7 @@ const Blogs = () => {
           {}
         );
         setShowComments(initialToggleStates);
-        setShowCommentForm(initialToggleStates);
+        // setShowCommentForm(initialToggleStates);
         // console.log(blogs);
       } catch (error) {
         // enqueueSnackbar("Error fetching blogs", { variant: "error" });
@@ -52,7 +52,7 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
-  let handleInputChange = () => {
+  let handleInputChange = (event) => {
     setFormData((currData) => {
       return { ...currData, [event.target.name]: event.target.value };
     });
@@ -188,7 +188,7 @@ const Blogs = () => {
                               <small>
                                 <em>
                                   {new Date(
-                                    blog.createdAt
+                                    review.createdAt
                                   ).toLocaleDateString()}
                                 </em>
                               </small>

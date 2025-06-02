@@ -44,7 +44,7 @@ async function main() {
 //   res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 // });
 
-app.use("/blogs/:id/comments", require("./routes/reviewRoutes.js"));
+app.use("/api/blogs/:id/comments", require("./routes/reviewRoutes.js"));
 app.use("/api/blogs", require("./routes/blogsRoutes.js"));
 app.use("/users", require("./routes/userRoutes.js"));
 

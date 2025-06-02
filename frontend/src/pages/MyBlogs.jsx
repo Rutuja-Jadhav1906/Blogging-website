@@ -58,11 +58,14 @@ const MyBlogs = () => {
 
   const handleDelete = async (blogId) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/blogs/${blogId}`, {
-        headers: {
-          authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-        },
-      });
+      const res = await axios.delete(
+        `http://localhost:3000/api/blogs/${blogId}`,
+        {
+          headers: {
+            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
+          },
+        }
+      );
       enqueueSnackbar("Blog deleted successfully", { variant: "success" });
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== blogId));
       // console.log(blog);

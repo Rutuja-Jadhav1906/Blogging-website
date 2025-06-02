@@ -73,7 +73,7 @@ const Blogs = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:3000/blogs/${blogId}/comments`,
+        `http://localhost:3000/api/blogs/${blogId}/comments`,
         formData,
         {
           headers: {
@@ -103,7 +103,7 @@ const Blogs = () => {
   const handleLike = async (blogId) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/blogs/${blogId}/like`,
+        `http://localhost:3000/api/blogs/${blogId}/like`,
         {},
         {
           headers: {

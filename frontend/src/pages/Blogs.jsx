@@ -29,12 +29,6 @@ const Blogs = () => {
   const [showComments, setShowComments] = useState({});
   // const [showCommentForm, setShowCommentForm] = useState({});
 
-  let handleInputChange = () => {
-    setFormData((currData) => {
-      return { ...currData, [event.target.name]: event.target.value };
-    });
-  };
-
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -57,6 +51,12 @@ const Blogs = () => {
     };
     fetchBlogs();
   }, []);
+
+  let handleInputChange = () => {
+    setFormData((currData) => {
+      return { ...currData, [event.target.name]: event.target.value };
+    });
+  };
 
   const handleToggleComments = (blogId) => {
     setShowComments((prevState) => ({

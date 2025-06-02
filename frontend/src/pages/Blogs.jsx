@@ -35,13 +35,10 @@ const Blogs = () => {
         const res = await fetch("http://localhost:3000/blogs");
         const data = await res.json();
         setBlogs(data);
-        const initialToggleStates = data.reduce(
-          (acc, blog) => ({
-            ...acc,
-            [blog._id]: false,
-          }),
-          {}
-        );
+        const initialState = data.reduce((acc, blog) => {
+          acc[blog._id] = false;
+          return acc;
+        }, {});
         setShowComments(initialToggleStates);
         // setShowCommentForm(initialToggleStates);
         // console.log(blogs);

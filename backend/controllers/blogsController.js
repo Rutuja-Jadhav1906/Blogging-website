@@ -6,7 +6,7 @@ exports.getBlogs = async (req, res) => {
     const blogs = await Blog.find()
       .populate("author", "name")
       .populate({ path: "reviews", populate: { path: "author" } }); // Populating only the 'name' field from the User model
-    res.json(blogs); // Send populated blogs data to frontend
+    res.status(200).json(blogs); // Send populated blogs data to frontend
   } catch (error) {
     res
       .status(500)

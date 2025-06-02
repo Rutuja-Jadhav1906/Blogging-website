@@ -11,11 +11,14 @@ const DeleteBlog = () => {
   useEffect(() => {
     const deleteBlog = async () => {
       try {
-        const res = await axios.delete(`http://localhost:3000/blogs/${id}`, {
-          headers: {
-            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-          },
-        });
+        const res = await axios.delete(
+          `http://localhost:3000/api/blogs/${id}`,
+          {
+            headers: {
+              authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
+            },
+          }
+        );
         alert(res.data.message);
         // console.log(blog);
       } catch (error) {

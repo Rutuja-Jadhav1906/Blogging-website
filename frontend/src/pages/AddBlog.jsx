@@ -33,7 +33,7 @@ const AddBlog = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/blogs/add",
+        "http://localhost:3000/api/blogs/add",
         formData,
         {
           headers: {

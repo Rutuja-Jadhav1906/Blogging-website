@@ -27,7 +27,7 @@ const MyBlogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/blogs/author/${id}`);
+        const res = await fetch(`http://localhost:3000/api/blogs/author/${id}`);
         if (!res.ok) {
           enqueueSnackbar("You have not posted any blogs yet", {
             variant: "error",

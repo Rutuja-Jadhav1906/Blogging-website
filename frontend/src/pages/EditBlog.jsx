@@ -22,7 +22,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/blogs/${id}`);
+        const res = await fetch(`http://localhost:3000/api/blogs/${id}`);
         const data = await res.json();
         setBlog(data);
         // console.log(blog);
@@ -43,12 +43,16 @@ const EditBlog = () => {
     event.preventDefault();
     // console.log();
     try {
-      const res = await axios.put(`http://localhost:3000/blogs/${id}`, blog, {
-        headers: {
-          authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-          "Content-Type": "application/json", // Optional, for JSON payloads
-        },
-      });
+      const res = await axios.put(
+        `http://localhost:3000/api/blogs/${id}`,
+        blog,
+        {
+          headers: {
+            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
+            "Content-Type": "application/json", // Optional, for JSON payloads
+          },
+        }
+      );
       enqueueSnackbar("Blog updated successfully", { variant: "success" });
       navigate("/");
     } catch (err) {

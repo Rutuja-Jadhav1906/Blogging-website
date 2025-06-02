@@ -39,8 +39,13 @@ async function main() {
 //   console.log("Sample was saved");
 //   res.send("SUCCESS");
 // });
+
+// app.get("/blogs", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+// });
+
 app.use("/blogs/:id/comments", require("./routes/reviewRoutes.js"));
-app.use("/blogs", require("./routes/blogsRoutes.js"));
+app.use("/api/blogs", require("./routes/blogsRoutes.js"));
 app.use("/users", require("./routes/userRoutes.js"));
 
 app.get("*", (req, res) => {

@@ -32,7 +32,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/blogs");
+        const res = await fetch("http://localhost:3000/api/blogs");
         const data = await res.json();
         setBlogs(data);
         const initialToggleStates = data.reduce((acc, blog) => {

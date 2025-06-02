@@ -35,7 +35,7 @@ const Blogs = () => {
         const res = await fetch("http://localhost:3000/blogs");
         const data = await res.json();
         setBlogs(data);
-        const initialState = data.reduce((acc, blog) => {
+        const initialToggleStates = data.reduce((acc, blog) => {
           acc[blog._id] = false;
           return acc;
         }, {});
@@ -43,7 +43,7 @@ const Blogs = () => {
         // setShowCommentForm(initialToggleStates);
         // console.log(blogs);
       } catch (error) {
-        // enqueueSnackbar("Error fetching blogs", { variant: "error" });
+        enqueueSnackbar("Error fetching blogs", { variant: "error" });
       }
     };
     fetchBlogs();

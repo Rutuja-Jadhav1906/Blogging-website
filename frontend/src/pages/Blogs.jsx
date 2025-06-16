@@ -77,8 +77,8 @@ const Blogs = () => {
         formData,
         {
           headers: {
-            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-            "Content-Type": "application/json", // Optional, for JSON payloads
+            authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
           },
         }
       );
@@ -86,7 +86,7 @@ const Blogs = () => {
       setBlogs((prevBlogs) =>
         prevBlogs.map((blog) =>
           blog._id === blogId
-            ? { ...blog, reviews: [...blog.reviews, newComment] } // Append the new comment
+            ? { ...blog, reviews: [...blog.reviews, newComment] }
             : blog
         )
       );
@@ -107,8 +107,7 @@ const Blogs = () => {
         {},
         {
           headers: {
-            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-            // "Content-Type": "application/json", // Optional, for JSON payloads
+            authorization: `Bearer ${authToken}`,
           },
         }
       );

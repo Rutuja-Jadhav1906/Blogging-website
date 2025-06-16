@@ -19,7 +19,7 @@ body {
   justify-content: center;
   background: linear-gradient(120deg, #000003, #010528) !important;
   color: white;
-  padding: 20px; /* Add padding for smaller screens */
+  padding: 20px;
 }
 
 .split {
@@ -29,13 +29,13 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .left {
   flex: 1;
   text-align: left;
-  margin-bottom: 20px; /* Add spacing for smaller screens */
+  margin-bottom: 20px;
 }
 
 .right {
@@ -46,12 +46,12 @@ body {
 }
 
 .hero-title {
-  font-size: 4.5rem; /* Reduce font size for smaller screens */
+  font-size: 4.5rem;
   margin: 0;
 }
 
 .highlight {
-  font-size: 5rem; /* Adjust size for responsiveness */
+  font-size: 5rem;
   color: #e37f33;
   font-weight: bold;
 }
@@ -77,33 +77,33 @@ body {
 }
 
 .hero-image {
-  max-width: 400px; /* Adjust size for responsiveness */
+  max-width: 400px;
   width: 100%;
   border-radius: 10px;
 }
 
 /* About Section */
 .about {
-  padding: 40px 20px; /* Reduce padding for smaller screens */
+  padding: 40px 20px;
   text-align: center;
   background: white;
 }
 
 .section-title {
-  font-size: 2rem; /* Adjust font size */
+  font-size: 2rem;
   color: #010528;
   margin-bottom: 20px;
 }
 
 .about-text {
-  font-size: 1rem; /* Adjust font size */
+  font-size: 1rem;
   line-height: 1.6;
   color: #666;
 }
 
 /* Features Section */
 .features {
-  padding: 40px 20px; /* Adjust padding */
+  padding: 40px 20px;
   background: #eef2f3;
 }
 
@@ -112,11 +112,11 @@ body {
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
-  flex-wrap: wrap; /* Allow items to wrap */
+  flex-wrap: wrap;
 }
 
 .feature {
-  flex: 1 1 300px; /* Ensure items take full width on small screens */
+  flex: 1 1 300px;
   margin: 15px;
   padding: 20px;
   text-align: center;
@@ -131,7 +131,7 @@ body {
 }
 
 .feature-icon {
-  font-size: 2.5rem; /* Adjust size */
+  font-size: 2.5rem;
   color: #0a9396;
   margin-bottom: 10px;
 }
@@ -139,13 +139,13 @@ body {
 /* Call-to-Action Section */
 .cta {
   text-align: center;
-  padding: 40px 20px; /* Adjust padding */
+  padding: 40px 20px;
   background: linear-gradient(120deg, #000003, #010528) !important;
   color: white;
 }
 
 .cta-title {
-  font-size: 2rem; /* Adjust font size */
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
@@ -179,18 +179,18 @@ body {
   }
 
   .features-container {
-    flex-direction: column; /* Stack features vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .feature {
-    max-width: 90%; /* Take full width with some margin */
+    max-width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .split {
-    flex-direction: column; /* Stack hero section vertically */
+    flex-direction: column;
     text-align: center;
   }
 

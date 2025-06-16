@@ -15,7 +15,7 @@ const DeleteBlog = () => {
           `http://localhost:3000/api/blogs/${id}`,
           {
             headers: {
-              authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
+              authorization: `Bearer ${authToken}`,
             },
           }
         );

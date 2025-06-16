@@ -5,8 +5,8 @@ exports.getBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find()
       .populate("author", "name")
-      .populate({ path: "reviews", populate: { path: "author" } }); // Populating only the 'name' field from the User model
-    res.status(200).json(blogs); // Send populated blogs data to frontend
+      .populate({ path: "reviews", populate: { path: "author" } });
+    res.status(200).json(blogs);
   } catch (error) {
     res
       .status(500)
@@ -15,7 +15,7 @@ exports.getBlogs = async (req, res) => {
 };
 
 exports.getAuthorBlogs = async (req, res) => {
-  const { id } = req.params; // Extract the author ID from request parameters
+  const { id } = req.params;
 
   try {
     const blogs = await Blog.find({ author: id })
@@ -52,7 +52,7 @@ exports.searchBlogs = async (req, res) => {
       category: { $regex: category, $options: "i" },
     })
       .populate("author", "name")
-      .populate({ path: "reviews", populate: { path: "author" } }); // Case-insensitive search
+      .populate({ path: "reviews", populate: { path: "author" } });
     if (blogs.length === 0) {
       return res
         .status(404)
@@ -68,13 +68,13 @@ exports.searchBlogs = async (req, res) => {
 exports.addBlog = async (req, res) => {
   try {
     const { title, content, category } = req.body;
-    const authorId = req.user.id; // Get the logged-in user's ID from the token
+    const authorId = req.user.id;
 
     const newBlog = new Blog({
       title,
       content,
       category,
-      author: authorId, // Use the logged-in user's ID as the author
+      author: authorId,
     });
 
     await newBlog.save();
@@ -101,17 +101,14 @@ exports.deleteBlog = async (req, res) => {
   const { id } = req.params;
 
   try {
-    // Find the blog and populate its reviews
     const blog = await Blog.findById(id).populate("reviews");
 
     if (!blog) {
       return res.status(404).json({ message: "Blog not found" });
     }
 
-    // Delete all the reviews related to this blog
     await Review.deleteMany({ _id: { $in: blog.reviews } });
 
-    // Now, delete the blog itself
     await Blog.findByIdAndDelete(id);
 
     res.json({
@@ -138,18 +135,15 @@ exports.likeBlog = async (req, res) => {
 
     const alreadyLiked = blog.likedBy.includes(authorId);
 
-    // Increment the likes count
     // blog.likes += 1;
     // await blog.save();
 
     if (alreadyLiked) {
-      // Remove the user's like
       blog.likedBy = blog.likedBy.filter(
         (id) => id.toString() !== authorId.toString()
       );
       blog.likes -= 1;
     } else {
-      // Add the user's like
       blog.likedBy.push(authorId);
       blog.likes += 1;
     }

@@ -14,9 +14,9 @@ const blogsSchema = mongoose.Schema({
     required: true,
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId, // Reference to a User model
-    ref: "User", // Name of the related model
-    required: true, // Make it mandatory if every blog must have an author
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
   },
   likes: { type: Number, default: 0 },
   likedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],

@@ -176,18 +176,18 @@ body {
   }
 
   .features-container {
-    flex-direction: column; /* Stack features vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .feature {
-    max-width: 90%; /* Take full width with some margin */
+    max-width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .split {
-    flex-direction: column; /* Stack hero section vertically */
+    flex-direction: column;
     text-align: center;
   }
 

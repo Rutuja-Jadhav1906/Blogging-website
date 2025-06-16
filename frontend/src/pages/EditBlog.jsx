@@ -48,8 +48,8 @@ const EditBlog = () => {
         blog,
         {
           headers: {
-            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
-            "Content-Type": "application/json", // Optional, for JSON payloads
+            authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
           },
         }
       );

@@ -23,7 +23,6 @@ const SearchResults = ({ searchResults }) => {
                   <Card.Text className="content">{result.content}</Card.Text>
                   <Card.Text className="author">
                     <strong>Author:</strong> {result.author.name}{" "}
-                    {/* Display the author's name */}
                   </Card.Text>
                   <Card.Text>
                     {new Date(result.createdAt).toLocaleDateString()}

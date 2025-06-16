@@ -28,17 +28,17 @@ const Navbar1 = ({ setSearchResults }) => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    // if (!searchTerm) return; // Ignore empty searches
+    // if (!searchTerm) return;
     try {
       const res = await axios.post(
         "http://localhost:3000/api/blogs/search",
         formData
       );
-      setSearchResults(res.data); // Pass data to the App state
+      setSearchResults(res.data);
       navigate("/search-results");
       setFormData({
         category: "",
-      }); // Redirect to the results page
+      });
     } catch (err) {
       console.error("Error fetching search results:", err);
     }

@@ -62,7 +62,7 @@ const MyBlogs = () => {
         `http://localhost:3000/api/blogs/${blogId}`,
         {
           headers: {
-            authorization: `Bearer ${authToken}`, // Send the token in the Authorization header
+            authorization: `Bearer ${authToken}`,
           },
         }
       );
@@ -78,7 +78,7 @@ const MyBlogs = () => {
     <div className="blog-container">
       <Container className="myblogs-container">
         <Row>
-          {blogs.length === 0 ? ( // Check if no blogs exist
+          {blogs.length === 0 ? (
             <Col>
               <p className="no-blogs-text">
                 You have not posted any blogs yet.

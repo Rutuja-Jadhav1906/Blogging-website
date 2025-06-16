@@ -1,6 +1,5 @@
-/* Main container background with navy blue palette */
 .edit-blog-page {
-  background: linear-gradient(120deg, #000003, #010528); /* Navy blue palette */
+  background: linear-gradient(120deg, #000003, #010528);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -9,7 +8,7 @@
 
 /* Form container with white background */
 .edit-blog-container {
-  background-color: white; /* White background for the form */
+  background-color: white;
   padding: 40px 30px;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -17,7 +16,7 @@
   max-width: 850px;
   transition: transform 0.3s ease;
   /* margin-top: 20px; */
-  margin-bottom: 0; /* Ensure no margin at the bottom */
+  margin-bottom: 0;
   padding-bottom: 20px;
 }
 
@@ -31,22 +30,22 @@
   font-size: 34px;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #011e3c; /* Navy blue color for the title */
+  color: #011e3c;
 }
 
 /* Form labels styling */
 .edit-blog-form .form-label {
   font-size: 16px;
   font-weight: bold;
-  color: #011e3c; /* Navy blue color */
+  color: #011e3c;
   margin-bottom: 10px;
 }
 
 /* Styling for form control (input, textarea) */
 .edit-blog-form .form-control {
-  background: #f4f7fb; /* Light gray background for inputs */
+  background: #f4f7fb;
   color: #333;
-  border: 1px solid #011e3c; /* Navy border */
+  border: 1px solid #011e3c;
   border-radius: 10px;
   padding: 12px 15px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -54,7 +53,7 @@
 }
 
 .edit-blog-form .form-control:focus {
-  border-color: #011e3c; /* Slight cyan color on focus */
+  border-color: #011e3c;
   box-shadow: 0 0 5px #011e3c;
 }
 
@@ -76,13 +75,13 @@
 }
 
 .submit-btn:hover {
-  background-color: #011e3c; /* Light cyan on hover */
+  background-color: #011e3c;
   color: #ffffff;
-  transform: translateY(-2px); /* Slight hover animation */
+  transform: translateY(-2px);
 }
 
 .submit-btn:active {
-  background-color: #011e3c; /* Darker cyan when clicked */
+  background-color: #011e3c;
   transform: translateY(2px);
 }
 

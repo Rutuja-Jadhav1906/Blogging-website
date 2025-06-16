@@ -40,7 +40,6 @@
   color: #d1d1d1;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .social-icons {
     justify-content: center;
